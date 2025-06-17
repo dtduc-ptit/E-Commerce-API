@@ -45,8 +45,8 @@ const login = async (req, res) => {
             return res.status(400).json({ message: 'Invalid password' });
         }
 
-        const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '15m' });
-        const refreshToken = jwt.sign({ userId: user._id }, process.env.JWT_REFRESH_SECRET, { expiresIn: '7d' });
+        const accessToken = jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
+        const refreshToken = jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_REFRESH_SECRET, { expiresIn: '7d' });
         await refreshTokens.create({ token: refreshToken, userId: user._id });
 
         res.json({
@@ -78,7 +78,7 @@ const refresh = async (req, res) => {
                 return res.status(403).json({ message: 'Invalid refresh token' });
             }
 
-            const accessToken = jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, { expiresIn: '15m' });
+            const accessToken = jwt.sign({ userId: user.userId, role: user.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
 
             res.json({
                 accessToken,
