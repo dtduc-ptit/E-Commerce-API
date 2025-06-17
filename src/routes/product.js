@@ -6,8 +6,8 @@ const auth = require('../middleware/auth');
 
 const productController = require('../controllers/productController');
 
-router.get('/', auth, productController.getProducts);
-router.get('/:id', auth, productController.getProductById);
+router.get('/', productController.getProducts);
+router.get('/:id', productController.getProductById);
 
 router.post('/', auth, isAdmin, productController.createProduct);
 router.patch('/:id', auth, isAdmin, productController.updateProduct);
