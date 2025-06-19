@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>E-commerce Store</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header">
+      <h1>E-commerce Store</h1>
+      <button id="logoutBtn">Đăng xuất</button>
+  </header>
+
+  <div class="search-container">
+      <input id="search" type="text" placeholder="Tìm sản phẩm">
+      <button id="searchBtn">Tìm kiếm</button>
+  </div>
+
+  <div class="main-container">
+      <div class="products-container">
+          <h2>Sản phẩm</h2>
+          <ul id="productsList"></ul>
+      </div>
+
+      <div class="cart-container">
+          <h2>Giỏ hàng</h2>
+          <ul id="cartItems"></ul>
+          <div class="cart-total">
+              Tổng tiền: $<span id="cartTotal">0</span>
+          </div>
+          <button id="checkoutBtn">Thanh toán</button>
+      </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

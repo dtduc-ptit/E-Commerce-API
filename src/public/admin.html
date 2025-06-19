@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Admin Panel</h1>
+        <div>
+            <a href="/" class="btn">Về trang chủ</a>
+            <button id="logoutBtn">Đăng xuất</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="product-form">
+            <h2>Thêm/Sửa sản phẩm</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label>Tên sản phẩm:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Giá:</label>
+                    <input type="number" id="price" required>
+                </div>
+                <div class="form-group">
+                    <label>Số lượng:</label>
+                    <input type="number" id="stock" required>
+                </div>
+                <div class="form-group">
+                    <label>Hình ảnh URL:</label>
+                    <input type="text" id="image">
+                </div>
+                <button type="submit">Lưu sản phẩm</button>
+            </form>
+        </div>
+
+        <div class="products-list">
+            <h2>Danh sách sản phẩm</h2>
+            <ul id="adminProductsList"></ul>
+        </div>
+    </div>
+
+    <script src="./admin.js"></script>
+</body>
+</html>

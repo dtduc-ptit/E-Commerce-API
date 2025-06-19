@@ -30,7 +30,7 @@ const createCheckoutSession = async (req, res) => {
             cancel_url: `${process.env.CLIENT_URL}/cancel`,
         });
 
-        res.status(200).json({ id: session.id });
+        res.status(200).json({ url: session.url });
     } catch (error) {
         console.error('Error creating checkout session:', error);
         res.status(500).json({ error: 'Internal Server Error' });
